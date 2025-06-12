@@ -19,6 +19,7 @@ public class SecurityConfig {
                         .requestMatchers(
                                 "/login",
                                 "/users/register",
+                                "/admin/login",
                                 "/oauth2/**",
                                 "/css/**",
                                 "/js/**",
@@ -35,7 +36,7 @@ public class SecurityConfig {
                 )
                 .oauth2Login(oauth2 -> oauth2
                         .loginPage("/login")
-                        .defaultSuccessUrl("/home") // same here — remove `true`
+                        .defaultSuccessUrl("/home")
                 )
                 .logout(logout -> logout
                         .logoutSuccessUrl("/login?logout=true")

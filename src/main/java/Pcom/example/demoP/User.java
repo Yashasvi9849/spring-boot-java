@@ -5,6 +5,10 @@ import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
 
+import java.util.ArrayList;
+import java.util.List;
+
+
 @Entity
 @Table(name = "users")
 public class User {
@@ -18,7 +22,8 @@ public class User {
     @Size(min = 6, message = "Password must be at least 6 characters long")
     private String password;
 
-    // Getters and Setters
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Enrollment> enrollments = new ArrayList<>();
     public String getUsername() {
         return username;
     }

@@ -1,9 +1,17 @@
-<!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
-<head>
-    <title>Home</title>
-</head>
-<body>
-<h1>Welcome to Home Page</h1>
-</body>
-</html>
+<form method="post" action="/registerCourse">
+    <select name="courseId">
+        <option th:each="course : ${allCourses}"
+                th:value="${course.id}"
+                th:text="${course.courseName + ' - ' + course.professorName}">
+        </option>
+    </select>
+    <button type="submit">Enroll</button>
+</form>
+
+<h2>Your Enrolled Courses</h2>
+<ul>
+    <li th:each="enroll : ${enrollments}">
+        <span th:text="${enroll.course.courseName}"></span> -
+        <span th:text="${enroll.course.professorName}"></span>
+    </li>
+</ul>

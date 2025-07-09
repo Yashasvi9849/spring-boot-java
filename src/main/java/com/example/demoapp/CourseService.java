@@ -1,4 +1,4 @@
-package Pcom.example.demoP;
+package com.example.demoapp;
 
 import org.springframework.stereotype.Service;
 
@@ -31,13 +31,13 @@ public class CourseService {
     }
 
 
-    // Enroll a user in a course (existing course)
+
     public void enrollUserInCourse(String username, Long courseId) {
         User user = userRepository.findByUsername(username).orElse(null);
         Course course = courseRepository.findById(courseId).orElse(null);
 
         if(user==null || course==null) return;
-            // Prevent duplicate enrollment
+
         boolean alreadyEnrolled = enrollmentRepository.existsByUserAndCourse(user, course);
         if (!alreadyEnrolled) {
             Enrollment enrollment = new Enrollment(user, course);

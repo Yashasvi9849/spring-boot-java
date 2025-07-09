@@ -1,4 +1,4 @@
-package Pcom.example.demoP;
+package com.example.demoapp;
 
 
 import jakarta.persistence.*;

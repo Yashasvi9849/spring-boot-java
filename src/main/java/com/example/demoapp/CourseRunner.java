@@ -1,6 +1,8 @@
-package Pcom.example.demoP;
+package com.example.demoapp;
 
 import org.springframework.boot.CommandLineRunner;
+import org.springframework.boot.SpringApplication;
+import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.stereotype.Component;
 
 import java.util.Optional;
@@ -10,9 +12,11 @@ import java.util.Scanner;
 public class CourseRunner implements CommandLineRunner {
 
     private final CourseRepository courseRepository;
+    private final ConfigurableApplicationContext context;
 
-    public CourseRunner(CourseRepository courseRepository) {
+    public CourseRunner(CourseRepository courseRepository, ConfigurableApplicationContext context) {
         this.courseRepository = courseRepository;
+        this.context = context;
     }
 
     @Override
@@ -27,6 +31,9 @@ public class CourseRunner implements CommandLineRunner {
 
             if (courseName.equalsIgnoreCase("exit")) {
                 System.out.println("Exiting course input.");
+
+                // ✅ Graceful Spring Boot shutdown
+                SpringApplication.exit(context, () -> 0);
                 break;
             }
 

@@ -1,9 +1,6 @@
-package Pcom.example.demoP;
+package com.example.demoapp;
 
 
-import Pcom.example.demoP.User;
-import Pcom.example.demoP.UserRepository;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 

@@ -1,12 +1,7 @@
-package Pcom.example.demoP;
+package com.example.demoapp;
 
 
-import Pcom.example.demoP.User;
-import Pcom.example.demoP.UserRepository;
 import jakarta.validation.Valid;
-import org.springframework.beans.factory.annotation.Autowired;
-import Pcom.example.demoP.UserService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.BindingResult;

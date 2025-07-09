@@ -1,4 +1,4 @@
-package Pcom.example.demoP;  // match your package name exactly
+package com.example.demoapp;  // match your package name exactly
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

@@ -9,7 +9,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                git 'https://github.com/your-user/your-springboot-repo.git'
+                git 'https://github.com/Yashasvi9849/spring-boot-java'
             }
         }
 

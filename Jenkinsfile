@@ -9,7 +9,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                git 'https://github.com/Yashasvi9849/spring-boot-java'
+                git branch: 'dockerization', url: 'https://github.com/Yashasvi9849/spring-boot-java'
             }
         }
 
